@@ -114,18 +114,7 @@
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
 
-  /* ---------- Copy application template ---------- */
-  const template = [
-    "Заявка в MORZEX",
-    "Ник: ",
-    "ID в Standoff 2: ",
-    "Возраст: ",
-    "Опыт в Standoff 2: ",
-    "Основная роль: ",
-    "Discord: ",
-    "Telegram: ",
-  ].join("\n");
-
+  /* ---------- Application form ---------- */
   const toast = document.getElementById("toast");
   let toastTimer;
 
@@ -136,32 +125,30 @@
     toastTimer = setTimeout(() => toast.classList.remove("is-show"), 3200);
   }
 
-  function fallbackCopy(text) {
-    const area = document.createElement("textarea");
-    area.value = text;
-    area.setAttribute("readonly", "");
-    area.style.position = "fixed";
-    area.style.opacity = "0";
-    document.body.appendChild(area);
-    area.select();
-    const copied = document.execCommand("copy");
-    document.body.removeChild(area);
-    return copied;
-  }
+  const form = document.getElementById("applyForm");
 
-  document.getElementById("copyTemplate").addEventListener("click", async () => {
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(template);
-        showToast("Шаблон скопирован — заполни и отправь капитану");
-      } else if (fallbackCopy(template)) {
-        showToast("Шаблон скопирован — заполни и отправь капитану");
-      } else {
-        showToast("Не удалось скопировать. Выдели текст вручную");
-      }
-    } catch {
-      showToast("Не удалось скопировать. Попробуй ещё раз");
-    }
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const value = (name) => String(data.get(name) || "").trim();
+
+    const lines = [
+      "Заявка в MORZEX",
+      `Ник: ${value("nick")}`,
+      `ID в Standoff 2: ${value("gameId")}`,
+      `Возраст: ${value("age")}`,
+      `Опыт в Standoff 2: ${value("exp") || "не указан"}`,
+      `Основная роль: ${value("role")}`,
+    ];
+
+    if (value("discord")) lines.push(`Discord: ${value("discord")}`);
+    if (value("telegram")) lines.push(`Telegram: ${value("telegram")}`);
+
+    const url = "https://t.me/wonnd2?text=" + encodeURIComponent(lines.join("\n"));
+    window.open(url, "_blank", "noopener");
+    showToast("Открываю Telegram — нажми «Отправить»");
   });
 
   /* ---------- Year ---------- */

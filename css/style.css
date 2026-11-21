@@ -832,32 +832,84 @@ p:last-child {
   color: var(--muted);
 }
 
-.contacts {
-  margin-top: 24px;
+.apply {
   display: grid;
-  gap: 10px;
+  gap: 12px;
+  margin-top: 4px;
 }
 
-.contact {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  font-size: 12px;
+.apply__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-.contact__label {
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.field > span {
   font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--dim);
 }
 
-.contact__value {
-  color: var(--muted);
-  font-style: italic;
+.field input,
+.field select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+}
+
+.field input::placeholder {
+  color: #5d636a;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+}
+
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 38px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%239aa0a7' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.field select option {
+  background: #0a0b0d;
+  color: var(--text);
+}
+
+.apply .btn {
+  margin-top: 6px;
+}
+
+.join__link {
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  transition: border-color 0.25s;
+}
+
+.join__link:hover {
+  border-color: var(--white);
 }
 
 .join__note {
@@ -922,6 +974,16 @@ p:last-child {
   letter-spacing: 0.08em;
   color: var(--dim);
   cursor: default;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+a.social {
+  cursor: pointer;
+}
+
+.social:hover {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .footer__copy {
@@ -1100,6 +1162,10 @@ p:last-child {
 
 @media (max-width: 480px) {
   .roster {
+    grid-template-columns: 1fr;
+  }
+
+  .apply__grid {
     grid-template-columns: 1fr;
   }
 

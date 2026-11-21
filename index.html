@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
   <a class="skip" href="#main">Перейти к содержимому</a>
@@ -227,25 +227,55 @@
 
           <div class="join__card reveal">
             <h3>Заявка в команду</h3>
-            <p>Скопируй шаблон, заполни и отправь капитану в Telegram.</p>
-            <button class="btn btn--primary btn--wide" id="copyTemplate" type="button">Скопировать шаблон заявки</button>
+            <p>Заполни форму — заявка откроется в Telegram у @wonnd2.</p>
 
-            <div class="contacts">
-              <div class="contact">
-                <span class="contact__label">Telegram</span>
-                <span class="contact__value">уточняется</span>
+            <form class="apply" id="applyForm">
+              <div class="apply__grid">
+                <label class="field">
+                  <span>Ник *</span>
+                  <input name="nick" autocomplete="nickname" placeholder="Твой ник" required>
+                </label>
+                <label class="field">
+                  <span>ID в Standoff 2 *</span>
+                  <input name="gameId" inputmode="numeric" placeholder="Например, 12345678" required>
+                </label>
+                <label class="field">
+                  <span>Возраст *</span>
+                  <input name="age" type="number" min="12" max="99" inputmode="numeric" placeholder="12+" required>
+                </label>
+                <label class="field">
+                  <span>Опыт в Standoff 2</span>
+                  <input name="exp" placeholder="Например, 2 года">
+                </label>
               </div>
-              <div class="contact">
-                <span class="contact__label">Discord</span>
-                <span class="contact__value">уточняется</span>
-              </div>
-              <div class="contact">
-                <span class="contact__label">E-mail</span>
-                <span class="contact__value">уточняется</span>
-              </div>
-            </div>
 
-            <p class="join__note">Контакты появятся после анонса состава — а пока заявку можно подготовить заранее.</p>
+              <label class="field">
+                <span>Основная роль</span>
+                <select name="role">
+                  <option>Капитан · IGL</option>
+                  <option>Снайпер</option>
+                  <option>Штурмовик</option>
+                  <option>Флекс</option>
+                  <option>Поддержка</option>
+                  <option>Другая роль</option>
+                </select>
+              </label>
+
+              <div class="apply__grid">
+                <label class="field">
+                  <span>Discord</span>
+                  <input name="discord" placeholder="Ник в Discord">
+                </label>
+                <label class="field">
+                  <span>Telegram</span>
+                  <input name="telegram" placeholder="@ник">
+                </label>
+              </div>
+
+              <button class="btn btn--primary btn--wide" type="submit">Отправить заявку в Telegram</button>
+            </form>
+
+            <p class="join__note">Откроется чат с @wonnd2 — останется нажать «Отправить». Или напиши напрямую: <a class="join__link" href="https://t.me/wonnd2" target="_blank" rel="noopener">@wonnd2</a></p>
           </div>
         </div>
       </div>
@@ -267,7 +297,7 @@
       </nav>
 
       <div class="footer__social">
-        <span class="social" title="Скоро">TG</span>
+        <a class="social" href="https://t.me/wonnd2" target="_blank" rel="noopener" title="Telegram @wonnd2" aria-label="Telegram @wonnd2">TG</a>
         <span class="social" title="Скоро">DS</span>
         <span class="social" title="Скоро">YT</span>
       </div>
@@ -278,6 +308,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
