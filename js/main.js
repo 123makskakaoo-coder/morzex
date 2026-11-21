@@ -118,9 +118,11 @@
   const template = [
     "Заявка в MORZEX",
     "Ник: ",
+    "ID в Standoff 2: ",
     "Возраст: ",
     "Опыт в Standoff 2: ",
     "Основная роль: ",
+    "Discord: ",
     "Telegram: ",
   ].join("\n");
 
