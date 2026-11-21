@@ -69,15 +69,14 @@ git push -u origin main
 
 Замени `Свободный слот` на ник, роль оставь или поменяй.
 Если хочешь фото игрока — замени `<div class="player__avatar">?</div>` на
-`<img class="player__avatar" src="assets/players/ник.jpg" alt="ник">`
-(и добавь стиль `object-fit: cover` уже задан).
+`<img class="player__avatar player__avatar--photo" src="assets/players/ник.jpg" alt="ник">`
+(фото обрезается по кругу автоматически).
 
 Занятый слот оформляется карточкой `player--filled` с ID, возрастом и контактами:
 
 ```html
 <article class="player player--filled reveal">
-  <div class="player__avatar" aria-hidden="true">K</div>
-  <h3 class="player__name">kyosuke</h3>
+  <div class="player__avatar" aria-hidden="true">K</div>  <h3 class="player__name">kyosuke</h3>
   <p class="player__role">Рифлер</p>
   <p class="player__meta">ID 85149861 · 14 лет · опыт 5 лет</p>
   <p class="player__links">
