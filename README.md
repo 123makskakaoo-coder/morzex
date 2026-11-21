@@ -1,5 +1,7 @@
 # MORZEX — сайт команды
 
+**Сайт:** https://123makskakaoo-coder.github.io/morzex/
+
 Одностраничный сайт киберспортивной команды MORZEX по Standoff 2.
 Чистые HTML/CSS/JS без сборки — идеально для GitHub Pages.
 
