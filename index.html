@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MORZEX — команда по Standoff 2</title>
+  <meta name="description" content="MORZEX — киберспортивная команда по Standoff 2. Состав формируется, набор открыт на все роли.">
+  <meta name="theme-color" content="#050506">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="apple-touch-icon" href="assets/logo.jpg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MORZEX — команда по Standoff 2">
+  <meta property="og:description" content="Состав формируется. Набор открыт на все роли.">
+  <meta property="og:image" content="assets/logo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержимому</a>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <a class="brand" href="#top" aria-label="MORZEX — на главную">
+      <img class="brand__logo" src="assets/logo.jpg" alt="" width="44" height="44">
+      <span class="brand__name">MORZEX</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#about">О команде</a>
+      <a href="#roster">Состав</a>
+      <a href="#roadmap">Достижения</a>
+      <a href="#join">Набор</a>
+      <a class="nav__cta" href="#join">Вступить</a>
+    </nav>
+
+    <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero__rings" aria-hidden="true">
+        <span class="ring ring--1"></span>
+        <span class="ring ring--2"></span>
+        <span class="ring ring--3"></span>
+        <span class="ring__core"></span>
+      </div>
+
+      <img class="hero__logo" src="assets/logo.jpg" alt="Эмблема команды MORZEX" width="240" height="240">
+      <p class="hero__kicker">Киберспортивная команда</p>
+      <h1 class="hero__title chrome">MORZEX</h1>
+      <p class="hero__sub">Standoff 2 · СНГ · 2026</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#roster">Смотреть состав</a>
+        <a class="btn btn--ghost" href="#join">Вступить в команду</a>
+      </div>
+
+      <a class="hero__scroll" href="#about" aria-label="Листать вниз">
+        <span></span>
+      </a>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>MORZEX</span><i>◆</i><span>Standoff 2</span><i>◆</i><span>Набор открыт</span><i>◆</i><span>СНГ</span><i>◆</i>
+        <span>MORZEX</span><i>◆</i><span>Standoff 2</span><i>◆</i><span>Набор открыт</span><i>◆</i><span>СНГ</span><i>◆</i>
+        <span>MORZEX</span><i>◆</i><span>Standoff 2</span><i>◆</i><span>Набор открыт</span><i>◆</i><span>СНГ</span><i>◆</i>
+        <span>MORZEX</span><i>◆</i><span>Standoff 2</span><i>◆</i><span>Набор открыт</span><i>◆</i><span>СНГ</span><i>◆</i>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="kicker">01 — О команде</p>
+          <h2>Молодая команда<br>с серьёзными целями</h2>
+        </div>
+
+        <div class="about">
+          <div class="about__text reveal">
+            <p>
+              <strong>MORZEX</strong> — киберспортивная команда по Standoff 2. Сейчас мы собираем
+              основной состав: проводим отбор, тестовые игры и формируем костяк, с которым
+              пойдём в первый турнирный сезон.
+            </p>
+            <p>
+              Наша цель — стабильные призовые места, узнаваемый тег на сцене СНГ и команда,
+              в которую хочется попасть. Тренировки, разбор игр и дисциплина — база,
+              с которой всё начинается.
+            </p>
+            <p class="about__quote">«Состав пока не объявлен — но место в истории уже есть.»</p>
+          </div>
+
+          <div class="about__stats reveal">
+            <div class="stat">
+              <span class="stat__value">0/5</span>
+              <span class="stat__label">состав сформирован</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value stat__value--sm">Standoff 2</span>
+              <span class="stat__label">дисциплина</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">СНГ</span>
+              <span class="stat__label">регион</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">2026</span>
+              <span class="stat__label">год основания</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="roster">
+      <div class="container">
+        <div class="section__head section__head--row reveal">
+          <div>
+            <p class="kicker">02 — Состав</p>
+            <h2>Пять слотов.<br>Пока все свободны.</h2>
+          </div>
+          <p class="roster__note"><span class="pulse"></span>Состав формируется</p>
+        </div>
+
+        <div class="roster">
+          <article class="player reveal">
+            <div class="player__avatar" aria-hidden="true">?</div>
+            <h3 class="player__name">Свободный слот</h3>
+            <p class="player__role">Капитан · IGL</p>
+            <span class="player__tag">Набор открыт</span>
+          </article>
+
+          <article class="player reveal">
+            <div class="player__avatar" aria-hidden="true">?</div>
+            <h3 class="player__name">Свободный слот</h3>
+            <p class="player__role">Снайпер</p>
+            <span class="player__tag">Набор открыт</span>
+          </article>
+
+          <article class="player reveal">
+            <div class="player__avatar" aria-hidden="true">?</div>
+            <h3 class="player__name">Свободный слот</h3>
+            <p class="player__role">Штурмовик</p>
+            <span class="player__tag">Набор открыт</span>
+          </article>
+
+          <article class="player reveal">
+            <div class="player__avatar" aria-hidden="true">?</div>
+            <h3 class="player__name">Свободный слот</h3>
+            <p class="player__role">Флекс</p>
+            <span class="player__tag">Набор открыт</span>
+          </article>
+
+          <article class="player reveal">
+            <div class="player__avatar" aria-hidden="true">?</div>
+            <h3 class="player__name">Свободный слот</h3>
+            <p class="player__role">Поддержка</p>
+            <span class="player__tag">Набор открыт</span>
+          </article>
+        </div>
+
+        <p class="roster__hint reveal">Имена игроков появятся здесь сразу после официального анонса состава.</p>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="kicker">03 — Достижения</p>
+          <h2>Путь только начинается</h2>
+        </div>
+
+        <ol class="roadmap">
+          <li class="roadmap__item reveal">
+            <span class="roadmap__status roadmap__status--now"><span class="pulse"></span>В процессе</span>
+            <div class="roadmap__body">
+              <h3>Формирование состава</h3>
+              <p>Открыт набор на все роли. Проводим отбор и тестовые игры, собираем сыгранный костяк.</p>
+            </div>
+          </li>
+          <li class="roadmap__item reveal">
+            <span class="roadmap__status">Скоро</span>
+            <div class="roadmap__body">
+              <h3>Дебютный турнир</h3>
+              <p>Первый официальный выход под тегом MORZEX. Следи за анонсами в наших соцсетях.</p>
+            </div>
+          </li>
+          <li class="roadmap__item reveal">
+            <span class="roadmap__status">Цель</span>
+            <div class="roadmap__body">
+              <h3>Первый трофей</h3>
+              <p>Призовые места на турнирах СНГ и выход на международную сцену Standoff 2.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="join">
+      <div class="container">
+        <div class="join">
+          <div class="join__text reveal">
+            <p class="kicker">04 — Набор</p>
+            <h2>Хочешь играть<br>под тегом MORZEX?</h2>
+            <p class="join__lead">Набор открыт на все роли. Если готов тренироваться и расти — ты нам нужен.</p>
+
+            <ul class="requirements">
+              <li>Возраст 14+</li>
+              <li>Опыт в Standoff 2 от года, понимание меты</li>
+              <li>Микрофон и стабильная связь</li>
+              <li>Онлайн 3–4 вечера в неделю</li>
+              <li>Дисциплина и командная игра</li>
+            </ul>
+          </div>
+
+          <div class="join__card reveal">
+            <h3>Заявка в команду</h3>
+            <p>Скопируй шаблон, заполни и отправь капитану в Telegram.</p>
+            <button class="btn btn--primary btn--wide" id="copyTemplate" type="button">Скопировать шаблон заявки</button>
+
+            <div class="contacts">
+              <div class="contact">
+                <span class="contact__label">Telegram</span>
+                <span class="contact__value">уточняется</span>
+              </div>
+              <div class="contact">
+                <span class="contact__label">Discord</span>
+                <span class="contact__value">уточняется</span>
+              </div>
+              <div class="contact">
+                <span class="contact__label">E-mail</span>
+                <span class="contact__value">уточняется</span>
+              </div>
+            </div>
+
+            <p class="join__note">Контакты появятся после анонса состава — а пока заявку можно подготовить заранее.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="brand brand--footer" href="#top">
+        <img class="brand__logo" src="assets/logo.jpg" alt="" width="40" height="40">
+        <span class="brand__name">MORZEX</span>
+      </a>
+
+      <nav class="footer__nav" aria-label="Навигация в подвале">
+        <a href="#about">О команде</a>
+        <a href="#roster">Состав</a>
+        <a href="#roadmap">Достижения</a>
+        <a href="#join">Набор</a>
+      </nav>
+
+      <div class="footer__social">
+        <span class="social" title="Скоро">TG</span>
+        <span class="social" title="Скоро">DS</span>
+        <span class="social" title="Скоро">YT</span>
+      </div>
+
+      <p class="footer__copy">© <span id="year">2026</span> MORZEX · Standoff 2 esports</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+# MORZEX — сайт команды
+
+Одностраничный сайт киберспортивной команды MORZEX по Standoff 2.
+Чистые HTML/CSS/JS без сборки — идеально для GitHub Pages.
+
+## Структура
+
+```
+index.html        — вся страница
+css/style.css     — стили
+js/main.js        — звёздный фон, меню, анимации, копирование заявки
+assets/logo.jpg   — логотип команды (аватар)
+```
+
+## Локальный просмотр
+
+Просто открой `index.html` в браузере или запусти локальный сервер:
+
+```bash
+python -m http.server 8080
+```
+
+и перейди на `http://localhost:8080`.
+
+## Публикация на GitHub Pages
+
+1. Создай на GitHub **публичный** репозиторий, например `morzex` (без README).
+2. Загрузи в него все файлы сайта из этой папки (`index.html`, `css/`, `js/`, `assets/`).
+3. Открой **Settings → Pages**.
+4. В блоке **Build and deployment** выбери:
+   - Source: **Deploy from a branch**
+   - Branch: **main**, папка **/ (root)**
+5. Нажми **Save** и подожди 1–2 минуты.
+
+Сайт откроется по адресу:
+
+```
+https://<твой-ник>.github.io/morzex/
+```
+
+### Через git, если удобнее
+
+```bash
+git init
+git add .
+git commit -m "MORZEX team site"
+git branch -M main
+git remote add origin https://github.com/<твой-ник>/morzex.git
+git push -u origin main
+```
+
+Дальше включи GitHub Pages как в шагах 3–5.
+
+## Что менять, когда появится состав
+
+### Игроки
+В `index.html` найди секцию `id="roster"`. Каждая карточка — это:
+
+```html
+<article class="player reveal">
+  <div class="player__avatar" aria-hidden="true">?</div>
+  <h3 class="player__name">Свободный слот</h3>
+  <p class="player__role">Капитан · IGL</p>
+  <span class="player__tag">Набор открыт</span>
+</article>
+```
+
+Замени `Свободный слот` на ник, роль оставь или поменяй.
+Если хочешь фото игрока — замени `<div class="player__avatar">?</div>` на
+`<img class="player__avatar" src="assets/players/ник.jpg" alt="ник">`
+(и добавь стиль `object-fit: cover` уже задан).
+
+### Контакты
+В секции `id="join"` найди блок `.contacts` и замени `уточняется` на реальные
+ссылки/ники:
+
+```html
+<a class="contact__value" href="https://t.me/ник">@ник</a>
+```
+
+### Соцсети в подвале
+В `footer` замени `<span class="social">TG</span>` на ссылки:
+
+```html
+<a class="social" href="https://t.me/ник" aria-label="Telegram">TG</a>
+```
+
+### Логотип
+Замени `assets/logo.jpg` своим файлом (квадратное изображение).
+Если формат другой (png/webp) — обнови путь в `index.html` и в `<link rel="icon">`.
+
+## Примечания
+
+- Шрифты (Unbounded, Rubik) подгружаются с Google Fonts — нужен интернет.
+- Сайт адаптивный: телефон, планшет, десктоп.
+- Кнопка «Скопировать шаблон заявки» работает без сервера, через буфер обмена.
