@@ -72,6 +72,22 @@ git push -u origin main
 `<img class="player__avatar" src="assets/players/ник.jpg" alt="ник">`
 (и добавь стиль `object-fit: cover` уже задан).
 
+Занятый слот оформляется карточкой `player--filled` с ID, возрастом и контактами:
+
+```html
+<article class="player player--filled reveal">
+  <div class="player__avatar" aria-hidden="true">K</div>
+  <h3 class="player__name">kyosuke</h3>
+  <p class="player__role">Рифлер</p>
+  <p class="player__meta">ID 85149861 · 14 лет · опыт 5 лет</p>
+  <p class="player__links">
+    <span>DS r_o_p_z</span>
+    <a href="https://t.me/Dkdksiws123" target="_blank" rel="noopener">TG @Dkdksiws123</a>
+  </p>
+  <span class="player__tag player__tag--active">В составе</span>
+</article>
+```
+
 ### Контакты и заявки
 Заявки уходят в Telegram **@wonnd2**: форма в секции `id="join"` собирает текст
 и открывает чат с готовым сообщением. Получатель задан в двух местах:
