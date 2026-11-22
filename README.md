@@ -63,7 +63,7 @@ git push -u origin main
 <article class="player reveal">
   <div class="player__avatar" aria-hidden="true">?</div>
   <h3 class="player__name">Свободный слот</h3>
-  <p class="player__role">Капитан · IGL</p>
+  <p class="player__role">Капитан (IGL)</p>
   <span class="player__tag">Набор открыт</span>
 </article>
 ```
