@@ -356,6 +356,69 @@ p:last-child {
   margin-top: 40px;
 }
 
+.hero__device {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 24px 0 0;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero__device i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.hero__clan {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.25s;
+}
+
+.hero__clan strong {
+  font-weight: 700;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 2px;
+  transition: border-color 0.25s;
+}
+
+.hero__clan i {
+  font-style: normal;
+  color: var(--dim);
+  transition: color 0.25s, transform 0.25s;
+}
+
+.hero__clan:hover {
+  color: var(--text);
+}
+
+.hero__clan:hover strong {
+  border-color: var(--white);
+}
+
+.hero__clan:hover i {
+  color: var(--white);
+  transform: translate(2px, -2px);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -588,6 +651,15 @@ p:last-child {
   background: rgba(255, 255, 255, 0.02);
 }
 
+.roster__note--link {
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.roster__note--link:hover {
+  border-color: var(--line-strong);
+  color: var(--white);
+}
+
 .pulse {
   position: relative;
   width: 7px;
@@ -693,6 +765,7 @@ p:last-child {
 .player--filled {
   border-color: rgba(255, 255, 255, 0.2);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 65%);
+  box-shadow: 0 24px 70px rgba(255, 255, 255, 0.05);
 }
 
 .player--filled .player__avatar {
@@ -758,6 +831,224 @@ p:last-child {
   font-size: 13px;
   color: var(--dim);
   text-align: center;
+}
+
+/* ---------- Matches ---------- */
+.matches {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.match {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background:
+    radial-gradient(110% 80% at 50% 0%, rgba(255, 255, 255, 0.07), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0) 65%);
+  overflow: hidden;
+  transition: border-color 0.35s, transform 0.35s var(--ease), background 0.35s;
+}
+
+.match::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18%;
+  right: 18%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.match:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-3px);
+}
+
+.match__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.match__label,
+.match-card__label,
+.clan-banner__label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.match__date {
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.match__teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.match__team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.match__logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+}
+
+.match__logo--tba {
+  display: grid;
+  place-items: center;
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.03);
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--dim);
+}
+
+.match__name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.match__vs {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: var(--dim);
+}
+
+.match__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.match__chips span {
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.match__note {
+  margin: 18px auto 24px;
+  max-width: 42ch;
+  font-size: 13px;
+  text-align: center;
+  color: var(--dim);
+}
+
+.match .btn {
+  width: fit-content;
+  margin: auto auto 0;
+}
+
+.match-side {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 14px;
+}
+
+.match-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0) 70%);
+}
+
+.match-card__score {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+
+.match-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--dim);
+}
+
+.clan-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 22px;
+  background:
+    radial-gradient(130% 140% at 0% 0%, rgba(255, 255, 255, 0.1), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  transition: transform 0.3s var(--ease), border-color 0.3s;
+}
+
+.clan-banner:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.clan-banner__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  background: var(--chrome);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.clan-banner__arrow {
+  font-size: 22px;
+  color: var(--muted);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.clan-banner:hover .clan-banner__arrow {
+  transform: translate(3px, -3px);
+  color: var(--white);
 }
 
 /* ---------- Roadmap ---------- */
@@ -1202,6 +1493,15 @@ a.social {
     grid-template-columns: 1fr;
   }
 
+  .matches {
+    grid-template-columns: 1fr;
+  }
+
+  .match-side {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
   .roadmap__item {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -1225,6 +1525,23 @@ a.social {
   .hero__scroll {
     display: none;
   }
+
+  .match-side {
+    grid-template-columns: 1fr;
+  }
+
+  .match {
+    padding: 24px 20px;
+  }
+
+  .match__teams {
+    gap: 8px;
+  }
+
+  .match__logo {
+    width: 54px;
+    height: 54px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1242,6 +1559,11 @@ a.social {
 
   .hero__actions .btn {
     width: 100%;
+  }
+
+  .hero__device {
+    padding: 8px 12px;
+    letter-spacing: 0.1em;
   }
 
   .join__card {

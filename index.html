@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
   <a class="skip" href="#main">Перейти к содержимому</a>
@@ -36,6 +36,7 @@
     <nav class="nav" id="nav" aria-label="Основная навигация">
       <a href="#about">О команде</a>
       <a href="#roster">Состав</a>
+      <a href="#matches">Матчи</a>
       <a href="#roadmap">Достижения</a>
       <a href="#join">Набор</a>
       <a class="nav__cta" href="#join">Вступить</a>
@@ -60,11 +61,18 @@
       <p class="hero__kicker">Киберспортивная команда</p>
       <h1 class="hero__title chrome">MORZEX</h1>
       <p class="hero__sub">Standoff 2 · СНГ · 2026</p>
+      <p class="hero__device"><i aria-hidden="true"></i>Мобильный состав: телефоны и планшеты</p>
 
       <div class="hero__actions">
         <a class="btn btn--primary" href="#roster">Смотреть состав</a>
         <a class="btn btn--ghost" href="#join">Вступить в команду</a>
       </div>
+
+      <a class="hero__clan" href="https://link.standoff2.com/ru/clan/view/MZEX" target="_blank" rel="noopener">
+        <span>Клан в Standoff 2</span>
+        <strong>MZEX</strong>
+        <i aria-hidden="true">↗</i>
+      </a>
 
       <a class="hero__scroll" href="#about" aria-label="Листать вниз">
         <span></span>
@@ -180,10 +188,71 @@
       </div>
     </section>
 
-    <section class="section" id="roadmap">
+    <section class="section" id="matches">
+      <div class="container">
+        <div class="section__head section__head--row reveal">
+          <div>
+            <p class="kicker">03 — Матчи</p>
+            <h2>Ближайшие матчи</h2>
+          </div>
+          <a class="roster__note roster__note--link" href="https://t.me/wonnd2" target="_blank" rel="noopener">
+            <span class="pulse"></span>Анонсы в Telegram
+          </a>
+        </div>
+
+        <div class="matches">
+          <article class="match reveal">
+            <div class="match__top">
+              <span class="match__label">Ближайший матч</span>
+              <span class="match__date">Дата TBA</span>
+            </div>
+
+            <div class="match__teams">
+              <div class="match__team">
+                <img class="match__logo" src="assets/logo.jpg" alt="MORZEX" width="64" height="64">
+                <span class="match__name">MORZEX</span>
+              </div>
+              <span class="match__vs" aria-hidden="true">VS</span>
+              <div class="match__team">
+                <span class="match__logo match__logo--tba" aria-hidden="true">?</span>
+                <span class="match__name">Соперник TBA</span>
+              </div>
+            </div>
+
+            <div class="match__chips">
+              <span>Standoff 2</span>
+              <span>BO3</span>
+              <span>Онлайн</span>
+            </div>
+
+            <p class="match__note">Первый официальный матч команды. Соперник и турнир будут объявлены после жеребьёвки.</p>
+
+            <a class="btn btn--primary" href="https://t.me/wonnd2" target="_blank" rel="noopener">Следить за анонсами</a>
+          </article>
+
+          <div class="match-side">
+            <article class="match-card reveal">
+              <span class="match-card__label">Результаты</span>
+              <span class="match-card__score">— : —</span>
+              <p>Сыграем первый матч — здесь появятся счёт и статистика.</p>
+            </article>
+
+            <a class="clan-banner reveal" href="https://link.standoff2.com/ru/clan/view/MZEX" target="_blank" rel="noopener">
+              <span class="clan-banner__text">
+                <span class="clan-banner__label">Наш клан в Standoff 2</span>
+                <span class="clan-banner__name">MZEX</span>
+              </span>
+              <span class="clan-banner__arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="roadmap">
       <div class="container">
         <div class="section__head reveal">
-          <p class="kicker">03 — Достижения</p>
+          <p class="kicker">04 — Достижения</p>
           <h2>Путь только начинается</h2>
         </div>
 
@@ -213,17 +282,18 @@
       </div>
     </section>
 
-    <section class="section section--alt" id="join">
+    <section class="section" id="join">
       <div class="container">
         <div class="join">
           <div class="join__text reveal">
-            <p class="kicker">04 — Набор</p>
+            <p class="kicker">05 — Набор</p>
             <h2>Хочешь играть<br>под тегом MORZEX?</h2>
             <p class="join__lead">Набор открыт на все роли. Если готов тренироваться и расти — ты нам нужен.</p>
 
             <ul class="requirements">
               <li>Возраст 12+</li>
               <li>Опыт в Standoff 2 от 1 года, понимание меты</li>
+              <li>Игра с телефона или планшета — без ПК и эмуляторов</li>
               <li>Микрофон и стабильная связь</li>
               <li>Онлайн 3–4 вечера в неделю</li>
               <li>Дисциплина и командная игра</li>
@@ -252,19 +322,41 @@
                   <span>Опыт в Standoff 2</span>
                   <input name="exp" placeholder="Например, 2 года">
                 </label>
+                <label class="field">
+                  <span>Звание в Standoff 2 *</span>
+                  <input name="rank" list="s2ranks" placeholder="Например, Майор" required>
+                </label>
+                <label class="field">
+                  <span>Основная роль</span>
+                  <select name="role">
+                    <option>Капитан · IGL</option>
+                    <option>Снайпер</option>
+                    <option>Штурмовик</option>
+                    <option>Флекс</option>
+                    <option>Поддержка</option>
+                    <option>Другая роль</option>
+                  </select>
+                </label>
               </div>
 
-              <label class="field">
-                <span>Основная роль</span>
-                <select name="role">
-                  <option>Капитан · IGL</option>
-                  <option>Снайпер</option>
-                  <option>Штурмовик</option>
-                  <option>Флекс</option>
-                  <option>Поддержка</option>
-                  <option>Другая роль</option>
-                </select>
-              </label>
+              <datalist id="s2ranks">
+                <option value="Рядовой"></option>
+                <option value="Ефрейтор"></option>
+                <option value="Младший сержант"></option>
+                <option value="Сержант"></option>
+                <option value="Старший сержант"></option>
+                <option value="Старшина"></option>
+                <option value="Прапорщик"></option>
+                <option value="Старший прапорщик"></option>
+                <option value="Младший лейтенант"></option>
+                <option value="Лейтенант"></option>
+                <option value="Старший лейтенант"></option>
+                <option value="Капитан"></option>
+                <option value="Майор"></option>
+                <option value="Подполковник"></option>
+                <option value="Полковник"></option>
+                <option value="Генерал"></option>
+              </datalist>
 
               <div class="apply__grid">
                 <label class="field">
@@ -297,11 +389,13 @@
       <nav class="footer__nav" aria-label="Навигация в подвале">
         <a href="#about">О команде</a>
         <a href="#roster">Состав</a>
+        <a href="#matches">Матчи</a>
         <a href="#roadmap">Достижения</a>
         <a href="#join">Набор</a>
       </nav>
 
       <div class="footer__social">
+        <a class="social" href="https://link.standoff2.com/ru/clan/view/MZEX" target="_blank" rel="noopener" title="Клан MZEX в Standoff 2" aria-label="Клан MZEX в Standoff 2">S2</a>
         <a class="social" href="https://t.me/wonnd2" target="_blank" rel="noopener" title="Telegram @wonnd2" aria-label="Telegram @wonnd2">TG</a>
         <span class="social" title="Скоро">DS</span>
         <span class="social" title="Скоро">YT</span>
@@ -313,6 +407,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

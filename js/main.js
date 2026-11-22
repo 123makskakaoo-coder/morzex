@@ -140,6 +140,7 @@
       `ID в Standoff 2: ${value("gameId")}`,
       `Возраст: ${value("age")}`,
       `Опыт в Standoff 2: ${value("exp") || "не указан"}`,
+      `Звание в Standoff 2: ${value("rank")}`,
       `Основная роль: ${value("role")}`,
     ];
 
